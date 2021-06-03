@@ -1,1 +1,5 @@
-# A2C (Advantage Actor Critic)
+## Actor Critic
+
+Pour palier les limitations des algorithmes DQN, une nouvelle famille d'architecture est née: Actor Critic. Elle se compose à la fois de Temporal Difference (TD) Learning pour laquelle on estime les valeurs d'état V, et de Policy Gradient (PG) où l'on optimise la politique en suivant les gradients vers les plus fortes récompenses. Ainsi, deux réseaux de neurones sont nécessaires pour réaliser ces deux opérations. Le premier réseau appelé Critic évalue la valeur d'état V à partir de l'état `state` actuel tandis que le second réseau appelé Actor détermine une distribution de probabilité sur les actions possibles à partir de l'état `state` actuel. Avec le bon système d'optimisation, le système actor-critic est capable de converger beaucoup plus rapidement que le DQN car le choix de l'action est fait en connaissance des valeurs d'état V estimées par le critique. 
+
+La version la plus répandue de l'actor-critic est Advantage Actor Critic (A2C) qui considère l'avantage dans le calcul de la perte associée à l'acteur. L'avantage est une mesure de l'intérêt d'une action dans un état donné par rapport à n'importe quelle autre action dans ce même état pour une politique donnée. 
